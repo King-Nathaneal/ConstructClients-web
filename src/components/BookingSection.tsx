@@ -3,7 +3,10 @@ import { useEffect, useRef } from 'react';
 // Declare Calendly type
 declare global {
   interface Window {
-    Calendly: any;
+    Calendly: {
+      initPopupWidget: (options: { url: string }) => void;
+      initInlineWidget: (options: { url: string; parentElement: HTMLElement }) => void;
+    };
   }
 }
 

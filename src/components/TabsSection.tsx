@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Globe, BarChart3, Calendar, Megaphone, Search, Video } from 'lucide-react';
+import { Globe, BarChart3, Calendar, Megaphone } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 type Tab = {
@@ -99,7 +99,6 @@ Why We Outperform Other Agencies:
 const TabsSection: React.FC = () => {
   const headerRef = useScrollReveal();
   const tabsRef = useScrollReveal(0.2);
-  const contentRef = useScrollReveal(0.3);
   const imageRef = useScrollReveal(0.4);
   const textRef = useScrollReveal(0.5);
   const [activeTab, setActiveTab] = useState(tabs[0].id);
@@ -110,11 +109,11 @@ const TabsSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 bg-[#2a0517]/90 relative">
+    <section className="pt-8 pb-20 bg-[#2a0517]/90 relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div ref={headerRef} className="text-center mb-16 reveal-element">
-          <div className="animate-float relative mb-6">
+        <div ref={headerRef} className="text-center mb-10 reveal-element">
+          <div className="animate-float relative mb-4">
             <div className="absolute inset-0 bg-glow rounded-3xl -z-10 opacity-50"></div>
             <div className="relative z-0">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-glow mb-4">

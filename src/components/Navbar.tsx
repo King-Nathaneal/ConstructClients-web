@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { openCalendlyPopup } from '../utils/calendly';
-import { Link } from 'react-router-dom';
 
 type NavbarProps = {
   scrollToVideo: () => void;

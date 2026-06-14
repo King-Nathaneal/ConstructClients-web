@@ -13,6 +13,8 @@ export const openCalendlyPopup = () => {
 // Add this to make TypeScript happy
 declare global {
   interface Window {
-    Calendly: any;
+    Calendly: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
   }
 } 

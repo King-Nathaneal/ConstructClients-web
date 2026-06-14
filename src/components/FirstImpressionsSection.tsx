@@ -19,14 +19,9 @@ const FirstImpressionsSection = () => {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((_, index) => {
-            // Create a new ref for each testimonial with increasing threshold
-            const testimonialRef = useScrollReveal((index + 1) * 0.15);
-            
-            return (
+          {[1, 2, 3].map((_, index) => (
               <div
                 key={index}
-                ref={testimonialRef}
                 className="testimonial-card p-6 rounded-xl reveal-element"
               >
                 {/* Star Rating */}
@@ -49,8 +44,7 @@ const FirstImpressionsSection = () => {
                   </div>
                 </div>
               </div>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>
