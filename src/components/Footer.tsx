@@ -1,39 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/constructclients-logo.png';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#2a0517] text-white py-8 relative z-10">
+    <footer className="bg-white/40 text-[#16325c] py-8 relative z-10 backdrop-blur-xl border-t border-[#d4af37]/25">
       <div 
         className="absolute inset-0" 
         style={{
-          background: 'linear-gradient(to bottom, rgba(56, 7, 30, 0.8), rgba(42, 5, 23, 0.95))'
+          background: 'linear-gradient(to bottom, rgba(255,255,255,0.2), rgba(214,234,248,0.45))'
         }}
       />
       <div className="container mx-auto px-4 relative z-20">
         <div className="flex flex-col space-y-6">
           {/* Top section with logo and links */}
-          <div className="flex itemss-center justify-between flex-wrap gap-4">
-            <div className="flex itemss-center">
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center">
               <img 
-                src="/Untitled design (5).svg" 
+                src={logo} 
                 alt="ConstructClients Logo" 
-                className="h-16 w-auto object-contain"
-                onError={(e) => {
-                  console.log('Logo failed to load');
-                  e.currentTarget.src = '/fallback-image.png';
+                className="h-16 w-16 object-contain"
+                style={{
+                  filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.4))'
                 }}
               />
             </div>
             <div className="flex flex-wrap items-center gap-4">
               {/* Socials Section */}
-              <div className="flex itemss-center gap-2">
-                <span className="text-white">Check out our socials:</span>
+              <div className="flex items-center gap-2">
+                <span className="text-[#16325c]">Check out our socials:</span>
                 <a 
                   href="https://www.linkedin.com/in/constructclients/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#0077b5] text-white p-2 rounded hover:bg-[#005885] transition-all flex itemss-center justify-center"
+                  className="bg-[#0077b5] text-white p-2 rounded hover:bg-[#005885] transition-all flex items-center justify-center"
                   aria-label="LinkedIn Profile"
                 >
                   <svg 
@@ -52,13 +52,13 @@ const Footer: React.FC = () => {
               <div className="flex space-x-4">
                 <Link 
                   to="/terms" 
-                  className="bg-[#ec9611] text-white px-4 py-2 rounded hover:bg-[#d88610] transition"
+                  className="bg-gradient-to-r from-[#d4af37] via-[#f0d78c] to-[#c9a227] text-[#16325c] px-4 py-2 rounded hover:brightness-105 transition font-semibold"
                 >
                   Terms of Service
                 </Link>
                 <Link 
                   to="/privacy-policy"
-                  className="bg-[#ec9611] text-white px-4 py-2 rounded hover:bg-[#d88610] transition"
+                  className="bg-gradient-to-r from-[#d4af37] via-[#f0d78c] to-[#c9a227] text-[#16325c] px-4 py-2 rounded hover:brightness-105 transition font-semibold"
                 >
                   Privacy Policy
                 </Link>
@@ -67,8 +67,8 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Bottom section with copyright */}
-          <div className="border-t border-gray-700/30 pt-6">
-            <p className="text-center text-gray-400">
+          <div className="border-t border-[#1e4d8c]/15 pt-6">
+            <p className="text-center text-[#3d5a80]">
               Copyright © 2025 ConstructClients. All Rights Reserved.
             </p>
           </div>
@@ -78,4 +78,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

@@ -7,4 +7,9 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  ssgOptions: {
+    dirStyle: 'nested',
+    script: 'async',
+    includedRoutes: () => ['/', '/privacy-policy'],
+  },
 });

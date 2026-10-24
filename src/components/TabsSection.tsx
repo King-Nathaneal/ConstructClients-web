@@ -109,7 +109,7 @@ const TabsSection: React.FC = () => {
   };
 
   return (
-    <section className="pt-8 pb-20 bg-[#2a0517]/90 relative">
+    <section className="pt-8 pb-20 bg-white/20 relative">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div ref={headerRef} className="text-center mb-10 reveal-element">
@@ -117,17 +117,17 @@ const TabsSection: React.FC = () => {
             <div className="absolute inset-0 bg-glow rounded-3xl -z-10 opacity-50"></div>
             <div className="relative z-0">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-glow mb-4">
-                Break free & <span className="bg-gradient-to-r from-[#ec9611] via-[#FFA500] to-[#ec9611] bg-clip-text text-transparent">scale your business</span>
+                Break free & <span className="bg-gradient-to-r from-[#c9a227] via-[#f0d78c] to-[#d4af37] bg-clip-text text-transparent">scale your business</span>
               </h2>
             </div>
           </div>
-          <p className="text-white max-w-2xl mx-auto">
+          <p className="text-[#3d5a80] max-w-2xl mx-auto">
             A proven framework that consistently delivers premium renovation leads and booked appointments
           </p>
         </div>
 
         {/* Desktop Tabs */}
-        <div ref={tabsRef} className="hidden md:flex justify-center space-x-2 md:space-x-4 mb-12 sticky top-20 z-50 bg-[#2a0517]/95 py-2 md:py-4 backdrop-blur-sm reveal-element">
+        <div ref={tabsRef} className="hidden md:flex justify-center space-x-2 md:space-x-4 mb-12 sticky top-20 z-50 bg-white/55 py-2 md:py-4 backdrop-blur-md rounded-xl border border-white/50 reveal-element">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -138,10 +138,10 @@ const TabsSection: React.FC = () => {
                 transform hover:scale-105 active:scale-95
                 text-sm md:text-base
                 ${activeTab === tab.id 
-                  ? 'bg-[#ec9611] text-white shadow-lg' 
-                  : 'bg-[#38071e] text-white hover:bg-[#ec9611]/20'
+                  ? 'bg-gradient-to-r from-[#d4af37] via-[#f0d78c] to-[#c9a227] text-[#16325c] shadow-lg' 
+                  : 'bg-white/50 text-[#16325c] hover:bg-[#d4af37]/20'
                 }
-                focus:outline-none focus:ring-2 focus:ring-[#ec9611]/50
+                focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50
                 cursor-pointer select-none relative
               `}
             >
@@ -154,7 +154,7 @@ const TabsSection: React.FC = () => {
         </div>
 
         {/* Mobile Tabs */}
-        <div className="block md:hidden mb-8 w-full fixed top-[5rem] left-0 right-0 z-[99] bg-[#2a0517] py-2 shadow-lg sticky top-20 z-50 bg-[#2a0517]/95 py-2 backdrop-blur-sm">
+        <div className="block md:hidden mb-8 w-full fixed top-[5rem] left-0 right-0 z-[99] bg-white/80 py-2 shadow-lg sticky top-20 z-50 backdrop-blur-md">
         {/* Add spacing to compensate for fixed tabs on mobile */}
         <div className="block md:hidden h-16"></div>
           <div className="grid grid-cols-2 gap-2 px-2">
@@ -168,10 +168,10 @@ const TabsSection: React.FC = () => {
                   active:scale-95 select-none
                   text-xs
                   ${activeTab === tab.id 
-                    ? 'bg-[#ec9611] text-white shadow-lg' 
-                    : 'bg-[#38071e] text-white hover:bg-[#ec9611]/20'
+                    ? 'bg-gradient-to-r from-[#d4af37] via-[#f0d78c] to-[#c9a227] text-[#16325c] shadow-lg' 
+                    : 'bg-white/60 text-[#16325c] hover:bg-[#d4af37]/20'
                   }
-                  focus:outline-none focus:ring-2 focus:ring-[#ec9611]/50
+                  focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50
                   cursor-pointer break-words
                 `}
               >
@@ -195,30 +195,30 @@ const TabsSection: React.FC = () => {
                 className="w-full h-full object-cover transition-transform duration-500"
                 loading="lazy"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#16325c]/40 to-transparent" />
             </div>
           </div>
           
           {/* Content Section */}
           <div ref={textRef} className="space-y-6 reveal-element">
-            <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#16325c] leading-tight">
               {activeContent.header}
             </h3>
-            <div className="prose prose-invert max-w-none">
+            <div className="prose max-w-none">
               {activeContent.description.split('\n\n').map((paragraph, index) => {
                 if (paragraph.startsWith('✅') || paragraph.startsWith('📊') || 
                     paragraph.startsWith('📅') || paragraph.startsWith('🔗') || 
                     paragraph.startsWith('🚀')) {
                   const [mainPoint, ...rest] = paragraph.split('–');
                   return (
-                    <p key={index} className="text-white leading-relaxed mb-4">
-                      <span className="glow-text font-bold text-white">
+                    <p key={index} className="text-[#3d5a80] leading-relaxed mb-4">
+                      <span className="glow-text font-bold text-[#16325c]">
                         {mainPoint.trim()}
                       </span>
                       {rest.length > 0 && (
                         <>
                           {' – '}
-                          <span className="text-white">
+                          <span className="text-[#3d5a80]">
                             {rest.join('–')}
                           </span>
                         </>
@@ -228,12 +228,12 @@ const TabsSection: React.FC = () => {
                 }
                 return (
                   <p key={index} className={`
-                    text-white leading-relaxed mb-4
+                    text-[#3d5a80] leading-relaxed mb-4
                     ${paragraph.includes('💰') ? 'glow-text font-bold' : ''}
                     ${paragraph.includes('Why Our Websites Outperform Others:') || 
                       paragraph.includes('Why High-End Renovation Companies Love This:') ||
                       paragraph.includes('Why We Outperform Other Agencies:')
-                      ? 'font-bold text-2xl text-[#ec9611] mt-8 mb-6' : ''}
+                      ? 'font-bold text-2xl text-[#d4af37] mt-8 mb-6' : ''}
                   `}>
                     {paragraph}
                   </p>

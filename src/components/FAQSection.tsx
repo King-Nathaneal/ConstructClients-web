@@ -22,16 +22,16 @@ const faqs: FAQItem[] = [
         <p className="mb-4">Clients typically see:</p>
         <ul className="space-y-2">
           <li className="flex items-center gap-2">
-            <span className="text-[#ec9611]">✅</span> 5.8x ROI on ad spend 📈
+            <span className="text-[#d4af37]">✅</span> 5.8x ROI on ad spend 📈
           </li>
           <li className="flex items-center gap-2">
-            <span className="text-[#ec9611]">✅</span> 30% fewer no-shows with AI-powered follow-ups 📅
+            <span className="text-[#d4af37]">✅</span> 30% fewer no-shows with AI-powered follow-ups 📅
           </li>
           <li className="flex items-center gap-2">
-            <span className="text-[#ec9611]">✅</span> 312% more organic traffic through SEO & content marketing 🚀
+            <span className="text-[#d4af37]">✅</span> 312% more organic traffic through SEO & content marketing 🚀
           </li>
           <li className="flex items-center gap-2">
-            <span className="text-[#ec9611]">✅</span> 76.2% lower cost per Google Ads conversion 💰
+            <span className="text-[#d4af37]">✅</span> 76.2% lower cost per Google Ads conversion 💰
           </li>
         </ul>
         <p className="mt-4">If you're serious about scaling, the numbers speak for themselves.</p>
@@ -56,17 +56,17 @@ const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-[#38071e]">
+    <section className="py-20 bg-white/20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-6 animate-float relative">
           <div className="absolute inset-0 bg-glow rounded-3xl -z-10 opacity-50"></div>
           <div className="relative z-0">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-glow mb-4">
-              <span className="bg-gradient-to-r from-[#ec9611] via-[#FFA500] to-[#ec9611] bg-clip-text text-transparent">Frequently Asked Questions</span> <span className="text-[#ec9611]">🤔</span>
+              <span className="bg-gradient-to-r from-[#c9a227] via-[#f0d78c] to-[#d4af37] bg-clip-text text-transparent">Frequently Asked Questions</span> <span className="text-[#d4af37]">🤔</span>
             </h2>
           </div>
         </div>
-        <p className="text-center text-gray-300 mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-[#3d5a80] mb-16 max-w-2xl mx-auto">
           Get answers to common questions about our services and process
         </p>
         
@@ -74,17 +74,17 @@ const FAQSection: React.FC = () => {
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="bg-[#2a0517] rounded-lg overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="glass-panel rounded-lg overflow-hidden transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <button
                 className="w-full px-6 py-4 text-left flex justify-between items-center gap-4"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="text-lg font-semibold">{faq.question}</span>
+                <span className="text-lg font-semibold text-[#16325c]">{faq.question}</span>
                 {openIndex === index ? (
-                  <ChevronUp className="w-5 h-5 text-[#ec9611] flex-shrink-0" />
+                  <ChevronUp className="w-5 h-5 text-[#d4af37] flex-shrink-0" />
                 ) : (
-                  <ChevronDown className="w-5 h-5 text-[#ec9611] flex-shrink-0" />
+                  <ChevronDown className="w-5 h-5 text-[#d4af37] flex-shrink-0" />
                 )}
               </button>
               <div 
@@ -92,7 +92,7 @@ const FAQSection: React.FC = () => {
                   openIndex === index ? 'max-h-[500px] pb-6' : 'max-h-0'
                 }`}
               >
-                <div className="text-gray-300 leading-relaxed">
+                <div className="text-[#3d5a80] leading-relaxed">
                   {faq.answer}
                 </div>
               </div>

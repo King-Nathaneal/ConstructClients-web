@@ -1,16 +1,14 @@
 import { useRef } from 'react';
-import { ArrowRight, Users2, Settings, Rocket } from 'lucide-react';
+import { Users2, Settings, Rocket } from 'lucide-react';
 import Navbar from "../components/Navbar";
 import TabsSection from "../components/TabsSection";
-import TestimonialsSection from "../components/TestimonialsSection";
 import BookingSection from "../components/BookingSection";
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { openCalendlyPopup } from '../utils/calendly';
 import FAQSection from '../components/FAQSection';
+import founderPhoto from '../assets/founder-v2.png';
 
 const Home = () => {
   const heroRef = useScrollReveal();
-  const testimonialsRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
   const tabsRef = useRef<HTMLDivElement>(null);
 
@@ -18,68 +16,51 @@ const Home = () => {
     tabsRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToTestimonials = () => {
-    testimonialsRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const scrollToFAQ = () => {
     faqRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden">
+    <div className="min-h-screen text-[#16325c] overflow-x-hidden">
       <Navbar 
         scrollToVideo={scrollToVideo} 
-        scrollToBooking={openCalendlyPopup} 
-        scrollToTestimonials={scrollToTestimonials}
         scrollToFAQ={scrollToFAQ}
       />
       
       {/* Hero Section */}
-      <header ref={heroRef} className="reveal-element relative min-h-[70vh] md:min-h-[75vh] flex items-start bg-[#38071e] z-0 pt-4 md:pt-0 pb-4 md:pb-8">
-        {/* Content */}
-        <div className="container mx-auto px-2 sm:px-4 relative z-10 mt-16 lg:mt-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
-            {/* Left side - Text Content */}
-            <div className="max-w-3xl text-center md:text-left relative pt-4 md:pt-8 order-2 md:order-1">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 md:mb-8 leading-[1.1] animate-fadeIn relative z-10">
-                <span className="block text-white mb-3 md:mb-4">
-                  Luxury Renovation Clients on{' '}
-                  <span className="bg-gradient-to-r from-[#ec9611] via-[#FFA500] to-[#ec9611] bg-clip-text text-transparent text-glow inline-block">
-                    AutoPilot
-                </span>
-                </span>
-                <div className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium mt-5 md:mt-6 leading-relaxed">
-                  <span className="text-[#ec9611] font-semibold">More freedom</span>
-                  <span className="text-white/70">, </span>
-                  <span className="text-[#ec9611] font-semibold">more joy</span>
-                  <span className="text-white/70">, </span>
-                  <span className="text-[#FFA500] font-semibold text-glow">more high-value projects</span>
-                  <span className="text-white/70">.</span>
-                </div>
-              </h1>
-              {/* Book My Call Button */}
-              <div className="flex justify-center md:justify-start gap-6 animate-fadeIn mb-4 md:mb-8 relative z-50">
-                <button 
-                  onClick={openCalendlyPopup}
-                  className="bg-[#ec9611] hover:bg-[#d88610] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-base rounded-lg font-semibold flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-lg"
-                >
-                  Book My Free Call
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right side - Hero Image */}
-            <div className="relative hidden sm:flex items-center justify-center z-0 order-1 md:order-2 mt-8 md:mt-0 mx-auto">
-              <img 
-                src="/Untitled design.svg" 
-                alt="Extension Hero" 
-                className="w-full md:w-auto max-w-[90%] md:max-w-full h-auto md:h-[450px] lg:h-[500px] xl:h-[550px] object-contain animate-fadeIn mx-auto relative"
+      <header ref={heroRef} className="reveal-element relative bg-transparent z-0 pt-4 md:pt-0 pb-8 md:pb-12">
+        <div className="container mx-auto px-2 sm:px-4 relative z-10 mt-20 lg:mt-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="relative flex justify-center md:justify-start max-w-full">
+              <div
+                className="absolute -inset-4 rounded-[2rem] blur-2xl opacity-80"
                 style={{
-                  filter: 'drop-shadow(0 0 20px rgba(236, 150, 17, 0.2))'
+                  background: 'radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(240,215,140,0.7) 45%, rgba(212,175,55,0.35) 100%)'
                 }}
               />
+              <img
+                src={founderPhoto}
+                alt="Nate, Founder of ConstructClients"
+                className="relative z-10 w-auto max-w-full max-h-[70vh] h-auto object-contain rounded-3xl border-[3px] border-[#f8e7b0]"
+                style={{
+                  boxShadow: '0 0 0 1px rgba(255,255,255,0.9), 0 0 28px rgba(255,255,255,0.85), 0 0 48px rgba(212,175,55,0.55)'
+                }}
+              />
+            </div>
+
+            <div className="text-center md:text-left px-4 md:px-0">
+              <p className="text-sm tracking-[0.25em] uppercase text-[#d4af37] font-semibold mb-4">
+                Founder
+              </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#16325c] leading-tight mb-4">
+                Hi, I’m Nate
+              </h1>
+              <p className="text-xl md:text-2xl text-[#1e4d8c] font-medium mb-5">
+                Founder of ConstructClients
+              </p>
+              <p className="text-[#3d5a80] text-base md:text-lg leading-relaxed">
+                I help luxury renovation businesses fill their calendars with high-value clients — so they can have more freedom, more joy, and more high-value projects.
+              </p>
             </div>
           </div>
         </div>
@@ -90,23 +71,18 @@ const Home = () => {
         <TabsSection />
       </section>
 
-      {/* Testimonials Section */}
-      <section ref={testimonialsRef}>
-        <TestimonialsSection />
-      </section>
-
       {/* Process Section */}
-      <section className="py-20 bg-[#2a0517]/80 backdrop-blur-md">
+      <section className="py-20 bg-white/25 backdrop-blur-md">
         <div className="container mx-auto px-4">
           <div className="text-center mb-6 animate-float relative">
             <div className="absolute inset-0 bg-glow rounded-3xl -z-10 opacity-50"></div>
             <div className="relative z-0">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-glow mb-4">
-                Our Process: <span className="bg-gradient-to-r from-[#ec9611] via-[#FFA500] to-[#ec9611] bg-clip-text text-transparent">Getting Started is Simple</span>
+                Our Process: <span className="bg-gradient-to-r from-[#c9a227] via-[#f0d78c] to-[#d4af37] bg-clip-text text-transparent">Getting Started is Simple</span>
           </h2>
             </div>
           </div>
-          <p className="text-center text-gray-300 mb-16 max-w-2xl mx-auto">
+          <p className="text-center text-[#3d5a80] mb-16 max-w-2xl mx-auto">
             We handle everything for you—from strategy to scaling—so you can focus on running your business.
           </p>
           <div className="grid md:grid-cols-3 gap-12">
@@ -128,14 +104,14 @@ const Home = () => {
               }
             ].map((step, index) => (
               <div key={index} className="process-step text-center">
-                <div className="w-20 h-20 mx-auto mb-6 bg-[#ec9611]/10 rounded-full flex items-center justify-center relative glow-step">
-                  <step.icon className="w-10 h-10 text-[#ec9611]" />
-                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-sm font-medium text-[#ec9611] glowing-text">
+                <div className="w-20 h-20 mx-auto mb-6 bg-white/50 rounded-full flex items-center justify-center relative glow-step border border-[#d4af37]/30">
+                  <step.icon className="w-10 h-10 text-[#d4af37]" />
+                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 text-sm font-medium text-[#d4af37] glowing-text">
                     {String(index + 1).padStart(2, '0')}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-gray-300">{step.desc}</p>
+                <h3 className="text-xl font-bold mb-3 text-[#16325c]">{step.title}</h3>
+                <p className="text-[#3d5a80]">{step.desc}</p>
               </div>
             ))}
           </div>
